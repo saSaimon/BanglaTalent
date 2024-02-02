@@ -15,7 +15,8 @@ from App.Application import Application
 from selenium.webdriver.support.wait import WebDriverWait
 from Logger.logging_config import setup_logging
 import logging
-
+from datetime import datetime
+import allure
 
 # behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/dashboard_test.feature
 
@@ -132,7 +133,7 @@ def browser_init(context, browser_name, headless):
 def before_scenario(context, scenario):
     context.logger = setup_logging()
 
-    browser_name = os.getenv('BROWSER', 'edge')  # Default to Chrome if not specified
+    browser_name = os.getenv('BROWSER', 'chrome')  # Default to Chrome if not specified
     headless_mode = os.getenv('HEADLESS', 'false').lower() == 'true'
     browser_init(context, browser_name, headless_mode)
     starting_message = f"\nStarted scenario in {context.browser_name}:  {scenario.name}"
@@ -156,4 +157,8 @@ def after_step(context, step):
 
 def after_scenario(context, feature):
     context.driver.delete_all_cookies()
+    # Log the start and end times to Allure
+    with allure.step(f"Scenario Execution Time"):
+        allure.attach(f"Start Time: {context.scenario_start_time.strftime('%Y-%m-%d %H:%M:%S')}", name="Start Time",
+                      attachment_type=allure.attachment_type.TEXT)
     context.driver.quit()
