@@ -55,10 +55,8 @@ def browser_init(context, browser_name, headless):
         context.driver = webdriver.Firefox(service=service, seleniumwire_options=seleniumwire_options,
                                            options=firefox_options)
 
-
     elif browser_name == 'safari':
         context.driver = webdriver.Safari()
-
 
     elif browser_name == 'edge':
         edge_options = EdgeOptions()
@@ -67,7 +65,6 @@ def browser_init(context, browser_name, headless):
         service = EdgeService(executable_path=EdgeChromiumDriverManager().install())
         context.driver = webdriver.Edge(service=service, seleniumwire_options=seleniumwire_options,
                                         options=edge_options)
-
 
     else:  # Defaults to Chrome if no match
         chrome_options = ChromeOptions()
@@ -135,7 +132,7 @@ def browser_init(context, browser_name, headless):
 def before_scenario(context, scenario):
     context.logger = setup_logging()
 
-    browser_name = os.getenv('BROWSER', 'chrome')  # Default to Chrome if not specified
+    browser_name = os.getenv('BROWSER', 'edge')  # Default to Chrome if not specified
     headless_mode = os.getenv('HEADLESS', 'false').lower() == 'true'
     browser_init(context, browser_name, headless_mode)
     starting_message = f"\nStarted scenario in {context.browser_name}:  {scenario.name}"
@@ -144,7 +141,7 @@ def before_scenario(context, scenario):
 
 
 def before_step(context, step):
-    before_message = f"Started step: {step}"
+    before_message = f"\nStarted step: {step}"
     print(before_message)
 
 
@@ -152,7 +149,7 @@ def after_step(context, step):
     if step.status == 'failed':
         failure_message = f"Step failed in {context.browser_name}: {step.name}"
         context.logger.error(failure_message)
-        print('\nStep failed: ', failure_message)
+        print('Step failed: ', failure_message)
     elif step.status == 'passed':
         print(f'Step passed: {step.name}')
 

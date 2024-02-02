@@ -21,7 +21,9 @@ class Page:
     def find_element(self, *locator):
         """ Find a single element by a locator tuple (By, value). """
         try:
+            self.wait_for_element(*locator)
             return self.driver.find_element(*locator)
+
         except NoSuchElementException:
             print(f"Element not found with locator: {locator}")
             return None
@@ -29,13 +31,19 @@ class Page:
     def find_elements(self, *locator):
         """ Find multiple elements by a locator tuple (By, value). """
         try:
+            self.wait_for_element(*locator)
             return self.driver.find_elements(*locator)
         except NoSuchElementException:
             print(f"Elements not found with locator: {locator}")
             return []
 
     def click(self, *locator):
-        self.driver.find_element(*locator).click()
+        try:
+            self.wait_for_element(*locator)
+            self.driver.find_element(*locator).click()
+        except NoSuchElementException:
+            print(f"Elements not found with locator: {locator}")
+            return None
 
     def wait_for_element_click(self, *locator):
         """ Click on an element identified by a locator tuple. """
@@ -46,9 +54,13 @@ class Page:
             print(f"Element not clickable with locator: {locator}")
 
     def input_text(self, text: str, *locator):
-        e = self.driver.find_element(*locator)
-        e.clear()
-        e.send_keys(text)
+        try:
+            self.wait_for_element(*locator)
+            e = self.driver.find_element(*locator)
+            e.clear()
+            e.send_keys(text)
+        except NoSuchElementException:
+            print(f"Element not found with locator: {locator}")
 
     def verify_text(self, expected_text, *locator, context):
         """ Verify if the element text matches the expected text. """

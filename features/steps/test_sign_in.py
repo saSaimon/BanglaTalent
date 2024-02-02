@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-username = os.environ.get('CANVAS8_USER')
-password = os.environ.get('CANVAS8_PASS')
+username = os.environ.get('BT_USER')
+password = os.environ.get('BT_PASS')
 
 
 @given('User can enter to the {website}')

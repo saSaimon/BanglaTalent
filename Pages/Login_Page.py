@@ -36,7 +36,6 @@ class LoginPage(Page):
         self.click(*self.NextButton)
 
     def input_email(self, text):
-        self.wait_for_element(*self.EmailField)
         self.input_text(text, *self.EmailField)
 
     def input_password(self, text):
