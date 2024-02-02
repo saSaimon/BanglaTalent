@@ -6,10 +6,10 @@ from Pages.Base_Page import Page
 
 
 class LoginPage(Page):
-    AcceptCookies = (By.XPATH, "//button[contains(text(), 'Accept All')]")
-    RejectCookies = (By.XPATH, "//button[contains(text(), 'Reject All')]")
-    SignInButton = (By.XPATH, "//button[contains(text(), 'Sign In')]")
-    NextButton = (By.XPATH, "//button[contains(text(), 'Next')]")
+    AcceptCookies = (By.XPATH, '//div[@class="grid grid-cols-2 gap-3 mt-10"]/button[2]')
+    RejectCookies = (By.XPATH, '//div[@class="grid grid-cols-2 gap-3 mt-10"]/button[1]')
+    SignInButton = (By.XPATH, '//div[@class="flex items-center md:ml-6 md:my-0 my-7 justify-center"]/a[1]')
+    NextButton = (By.XPATH, "//button[@class='inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary h-10 px-4 py-2 w-full']")
     EmailField = (By.XPATH, '//div[@class="relative w-full"]/input')
     PasswordField = (By.XPATH, '//*[@id="password"]')
     SubmitButton = (By.CSS_SELECTOR, "button[type='submit']")
