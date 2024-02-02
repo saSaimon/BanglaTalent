@@ -120,7 +120,7 @@ def browser_init(context, browser_name, headless):
     #     options=options
     # )
 
-    context.logger = setup_logging()
+
     context.driver.maximize_window()
     # context.driver.set_window_size(2024, 200200)
     context.driver.implicitly_wait(4)
@@ -133,13 +133,13 @@ def browser_init(context, browser_name, headless):
 
 
 def before_scenario(context, scenario):
-    print('\nStarted scenario: ', scenario.name)
+    context.logger = setup_logging()
+
     browser_name = os.getenv('BROWSER', 'chrome')  # Default to Chrome if not specified
     headless_mode = os.getenv('HEADLESS', 'false').lower() == 'true'
     browser_init(context, browser_name, headless_mode)
-    starting_message = f"Started scenario in {context.browser_name}:  {scenario.name}"
+    starting_message = f"\nStarted scenario in {context.browser_name}:  {scenario.name}"
     context.logger.info(starting_message)
-
     print(starting_message)
 
 

@@ -71,3 +71,18 @@ def sign_in_successful(context):
 @then('Verify Login Failed')
 def login_failed(context):
     context.app.login_page.verify_login_failed(context)
+
+
+@then('Check Keep me sign in')
+def click_checkbox(context):
+    context.app.login_page.check_keep_me_sign_ing(context)
+
+
+@then('Verify Email Validation is present')
+def check_email_validation(context):
+    context.app.login_page.check_email_validation(context)
+
+
+@then('Verify Password Validation is present')
+def check_email_validation(context):
+    context.app.login_page.check_password_validation(context)

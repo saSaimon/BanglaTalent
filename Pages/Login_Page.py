@@ -15,6 +15,10 @@ class LoginPage(Page):
     SubmitButton = (By.CSS_SELECTOR, "button[type='submit']")
     BtLogo = (By.CSS_SELECTOR, '[href="/candidate"]')
     LoginFailed = (By.CSS_SELECTOR, '[class="text-sm font-semibold [&+div]:text-xs"]')
+    LoginFailedCart = (By.CSS_SELECTOR, '[class="grid gap-1"]')
+    KeepMeSignCheckbox = (By.CSS_SELECTOR, '[class="flex space-x-2 items-top"] button')
+    PasswordValidationMessage = (By.CSS_SELECTOR, '[class="text-[12px] mt-1 select-none leading-none text-destructive"]')
+    EmailValidationMessage = (By.CSS_SELECTOR, '[class="text-[12px] mt-1 select-none leading-none text-destructive"]')
 
     def enter_to_website(self, url):
         self.open_url(url)
@@ -42,9 +46,19 @@ class LoginPage(Page):
         self.click(*self.SubmitButton)
 
     def verify_bt_logo(self):
+        self.wait_for_element(*self.BtLogo)
         element = self.find_element(*self.BtLogo)
         assert element, f'Bt logo not found so login Unsuccessful'
 
     def verify_login_failed(self, context):
-        time.sleep(1)
+        self.wait_for_element(*self.LoginFailedCart)
         self.verify_text('Login Failed!', *self.LoginFailed, context=context)
+
+    def check_keep_me_sign_ing(self, context):
+        self.click(*self.KeepMeSignCheckbox)
+
+    def check_password_validation(self, context):
+        self.verify_text('Password must be at least 8 characters long', *self.PasswordValidationMessage, context=context)
+
+    def check_email_validation(self, context):
+        self.verify_text('Valid email is required!', *self.EmailValidationMessage, context=context)
