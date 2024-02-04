@@ -157,8 +157,4 @@ def after_step(context, step):
 
 def after_scenario(context, feature):
     context.driver.delete_all_cookies()
-    # Log the start and end times to Allure
-    with allure.step(f"Scenario Execution Time"):
-        allure.attach(f"Start Time: {context.scenario_start_time.strftime('%Y-%m-%d %H:%M:%S')}", name="Start Time",
-                      attachment_type=allure.attachment_type.TEXT)
     context.driver.quit()

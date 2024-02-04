@@ -16,3 +16,33 @@ Feature: Landing Page Test
     Then Verify Job Carts are present
     Then Verify Top pick Carts are present
     Then Verify Success Stories slides are present
+
+  Scenario Outline: Check Find a job section
+    Given Logo is present
+    When User click Find a job first option
+    Then Verify there are available some vacancies
+    When User will input keywords: <keywords>
+    When User will input location: <input_location>
+    When User will select by location: <select_location>
+    When Input Salary range: <salary_range>
+    When User will click search button
+    Then Verify there are job carts with this search
+   Examples:
+    |keywords      |input_location   |select_location|salary_range |
+    |qa            |Bangladesh       |Bangladesh     |1000         |
+    |dev           |India            |India          |10000        |
+    |content writer|UK               |UK             |100000       |
+    |dev           |USA              |USA            |10           |
+
+  Scenario: Test Job Details
+    Given Logo is present
+    When User click Find a job first option
+    Then Verify there are available some vacancies
+    When User will click search button
+    When Select job cart by name: Manager
+    Then Verify Apply Job button is present
+    When User will click apply job button
+    When User will click yes button
+    Then Verify pop up sign in window
+
+
