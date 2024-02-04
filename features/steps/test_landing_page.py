@@ -117,3 +117,13 @@ def click_yes_button(context):
 @then('Verify pop up sign in window')
 def verify_sign_ing_window_pop_up(context):
     context.app.landing_page.verify_sign_in_pop_up(context)
+
+
+@when('User will click no button')
+def click_no_button(context):
+    context.app.landing_page.click_no_button()
+
+
+@then('Verify user returns to apply page')
+def verify_return_apply_page(context):
+    context.app.landing_page.verify_apply_job_button(context)

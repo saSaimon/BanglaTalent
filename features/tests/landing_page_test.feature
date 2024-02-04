@@ -34,7 +34,7 @@ Feature: Landing Page Test
     |content writer|UK               |UK             |100000       |
     |dev           |USA              |USA            |10           |
 
-  Scenario: Test Job Details
+  Scenario: Test Apply job feature + click yes to sign up
     Given Logo is present
     When User click Find a job first option
     Then Verify there are available some vacancies
@@ -44,5 +44,16 @@ Feature: Landing Page Test
     When User will click apply job button
     When User will click yes button
     Then Verify pop up sign in window
+
+    Scenario: Test Apply job feature + click no to sign up
+    Given Logo is present
+    When User click Find a job first option
+    Then Verify there are available some vacancies
+    When User will click search button
+    When Select job cart by name: Manager
+    Then Verify Apply Job button is present
+    When User will click apply job button
+    When User will click no button
+    Then Verify user returns to apply page
 
 
