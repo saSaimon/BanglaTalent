@@ -12,7 +12,7 @@ from selenium.common.exceptions import JavascriptException
 class Page:
     def __init__(self, driver):
         self.driver = driver
-        self.wait = WebDriverWait(self.driver, 15)
+        self.wait = WebDriverWait(self.driver, 10)
 
     def open_url(self, url):
         """ Navigate to a specified URL. """
