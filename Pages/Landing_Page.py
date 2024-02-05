@@ -192,4 +192,3 @@ class LandingPage(Page):
 
     def verify_sign_in_pop_up(self, context):
         self.verify_text('Sign in', *self.FloatingSignInButton, context=context)
-
