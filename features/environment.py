@@ -16,7 +16,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from Logger.logging_config import setup_logging
 import logging
 from datetime import datetime
-import allure
+# import allure
 
 # behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/dashboard_test.feature
 
