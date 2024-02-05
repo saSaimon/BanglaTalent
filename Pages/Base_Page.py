@@ -384,3 +384,15 @@ class Page:
             assert url == current_url
         except AssertionError as ae:
             print(f'Expected{url} but got {current_url}')
+
+    def previous_page(self):
+        """User will get previous page with this methode."""
+        self.driver.back()
+
+    def verify_partial_url(self, url):
+        """Verify partial current url is matching as expected URL."""
+        current_url = self.driver.current_url
+        try:
+            assert url in current_url
+        except AssertionError as ae:
+            print(f'Expected{url} but got {current_url}')
