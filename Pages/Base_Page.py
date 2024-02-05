@@ -376,3 +376,11 @@ class Page:
             EC.presence_of_element_located((By.XPATH, f"//*[contains(text(), '{text}')]"))
         )
         return element.text
+
+    def verify_url(self, url):
+        """Verify current url is matching as expected URL."""
+        current_url = self.driver.current_url
+        try:
+            assert url == current_url
+        except AssertionError as ae:
+            print(f'Expected{url} but got {current_url}')
