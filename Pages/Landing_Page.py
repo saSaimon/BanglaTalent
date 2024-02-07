@@ -11,6 +11,7 @@ class LandingPage(Page):
                 '//ul[@class="bg-white sm:bg-transparent md:flex md:items-center mx-auto md:pb-0 pb-12 absolute md:static md:z-auto right-0 w-full md:w-auto md:pr-0 pr-9 transition-all duration-500 ease-in sm:transition-none top-[-490px]"]/li[2]')
     AboutUs = (By.XPATH,
                '//ul[@class="bg-white sm:bg-transparent md:flex md:items-center mx-auto md:pb-0 pb-12 absolute md:static md:z-auto right-0 w-full md:w-auto md:pr-0 pr-9 transition-all duration-500 ease-in sm:transition-none top-[-490px]"]/li[3]')
+    SignUpButton = (By.XPATH, '//div[@class="flex items-center md:ml-6 md:my-0 my-7 justify-center"]/a[2]')
     TitleText = (By.XPATH, "//h1[@class='mb-6 text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary']")
     FindAJob2 = (By.XPATH, '//div[@class="flex items-center justify-center mt-6 gap-x-4"]/a[1]')
     PostAJob2 = (By.XPATH, '//div[@class="flex items-center justify-center mt-6 gap-x-4"]/a[2]')
@@ -49,6 +50,9 @@ class LandingPage(Page):
     def about_us(self, context):
         self.find_element(*self.AboutUs)
         self.verify_text('About us', *self.AboutUs, context=context)
+
+    def click_Sing_up_button(self):
+        self.click(*self.SignUpButton)
 
     def find_a_job_lower(self, context):
         self.find_element(*self.FindAJob2)

@@ -64,6 +64,15 @@ class Page:
 
     def verify_text(self, expected_text, *locator, context):
         """ Verify if the element text matches the expected text. """
+        # try:
+        #     self.wait_for_element(*locator)
+        #     actual_text = self.driver.find_element(*locator).text
+        # except NoSuchElementException:
+        #     actual_text = self.driver.find_element(*locator).text
+        #     message = f'Expected {expected_text}, but got {actual_text}'
+        #     assert expected_text == actual_text, message
+        #     context.logger.error(message)
+
         self.wait_for_element(*locator)
         actual_text = self.driver.find_element(*locator).text
         message = f'Expected {expected_text}, but got {actual_text}'
