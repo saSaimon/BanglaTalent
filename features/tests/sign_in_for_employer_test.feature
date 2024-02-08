@@ -1,6 +1,6 @@
 # Created by macbookpro at 8/2/24
-Feature: Different Login Test Cases
-  In this feature, different login test cases will be implemented.
+Feature: Different Login Test Cases for Employer Sections
+  In this feature, different login test cases of employer sections will be implemented.
 
   Scenario: User can log in with valid email and valid pass
     Given User can enter to the https://banglatalent.com/

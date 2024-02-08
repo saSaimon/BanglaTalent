@@ -1,5 +1,5 @@
 # Created by DELL at 2/6/2024
-Feature: Sing in Test Cases
+Feature: Different Sing up Test Cases
   In this feature, Sing in test cases will be implemented.
 
   Scenario: User can Sing in with valid information
