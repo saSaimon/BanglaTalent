@@ -19,6 +19,9 @@ class LoginPage(Page):
     KeepMeSignCheckbox = (By.CSS_SELECTOR, '[class="flex space-x-2 items-top"] button')
     PasswordValidationMessage = (By.CSS_SELECTOR, '[class="text-[12px] mt-1 select-none leading-none text-destructive"]')
     EmailValidationMessage = (By.CSS_SELECTOR, '[class="text-[12px] mt-1 select-none leading-none text-destructive"]')
+    LookingForJobButton = (By.XPATH, "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/p[1]")
+    LookingToHireButton = (By.XPATH, "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/p[1]")
+    JobListing = (By.CSS_SELECTOR, '[class="text-[#183B56] text-[28px] not-italic font-semibold leading-[150%] my-4"]')
 
     def enter_to_website(self, url):
         self.open_url(url)
@@ -61,3 +64,9 @@ class LoginPage(Page):
 
     def check_email_validation(self, context):
         self.verify_text('Valid email is required!', *self.EmailValidationMessage, context=context)
+
+    def click_hire(self):
+        self.click(*self.LookingToHireButton)
+
+    def verify_job_listing_present(self, context):
+        self.verify_text('Job Listings', *self.JobListing, context=context)
