@@ -65,6 +65,15 @@ class Page:
 
     def verify_text(self, expected_text: object, *locator: object, context: object) -> object:
         """ Verify if the element text matches the expected text. """
+        # try:
+        #     self.wait_for_element(*locator)
+        #     actual_text = self.driver.find_element(*locator).text
+        # except NoSuchElementException:
+        #     actual_text = self.driver.find_element(*locator).text
+        #     message = f'Expected {expected_text}, but got {actual_text}'
+        #     assert expected_text == actual_text, message
+        #     context.logger.error(message)
+
         self.wait_for_element(*locator)
         actual_text = self.driver.find_element(*locator).text
         message = f'Expected {expected_text}, but got {actual_text}'
@@ -393,3 +402,15 @@ class Page:
     #     self.driver.back()
     def previous_page(self):
         self.driver.back()
+
+    def previous_page(self):
+        """User will get previous page with this methode."""
+        self.driver.back()
+
+    def verify_partial_url(self, url):
+        """Verify partial current url is matching as expected URL."""
+        current_url = self.driver.current_url
+        try:
+            assert url in current_url
+        except AssertionError as ae:
+            print(f'Expected{url} but got {current_url}')

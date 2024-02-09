@@ -1,6 +1,8 @@
 from Pages.Login_Page import LoginPage
 from Pages.Landing_Page import LandingPage
-from Pages.Footer_Page import FooterPage, FooterPage
+from Pages.Footer_Page import FooterPage
+from Pages.SingUp_Page import SingUpPage
+
 
 
 class Application:
@@ -9,3 +11,4 @@ class Application:
         self.login_page = LoginPage(self.driver)
         self.landing_page = LandingPage(self.driver)
         self.footer_page = FooterPage(self.driver)
+        self.singUp_page = SingUpPage(self.driver)

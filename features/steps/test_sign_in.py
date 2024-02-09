@@ -86,3 +86,24 @@ def check_email_validation(context):
 @then('Verify Password Validation is present')
 def check_email_validation(context):
     context.app.login_page.check_password_validation(context)
+
+
+@then('Enter valid email for employer')
+def enter_valid_email(context):
+    context.app.login_page.input_email('nogoxis359@oprevolt.com')
+
+
+@then('Enter valid password for employer')
+def enter_valid_password(context):
+    context.app.login_page.input_password('Salam-0987')
+
+
+@then('Click on Looking to hire')
+def click_looking_to_hire(context):
+    time.sleep(5)
+    context.app.login_page.click_hire()
+
+
+@then('Verify Job Listing element is present')
+def job_listing_present(context):
+    context.app.login_page.verify_job_listing_present(context)
