@@ -1,3 +1,4 @@
+import self
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
@@ -62,7 +63,7 @@ class Page:
         except NoSuchElementException:
             print(f"Element not found with locator: {locator}")
 
-    def verify_text(self, expected_text, *locator, context):
+    def verify_text(self, expected_text: object, *locator: object, context: object) -> object:
         """ Verify if the element text matches the expected text. """
         # try:
         #     self.wait_for_element(*locator)
@@ -393,6 +394,14 @@ class Page:
             assert url == current_url
         except AssertionError as ae:
             print(f'Expected{url} but got {current_url}')
+
+    # def previous_page(self):
+    #
+    # """User will get previous page with this methode."""
+    #
+    #     self.driver.back()
+    def previous_page(self):
+        self.driver.back()
 
     def previous_page(self):
         """User will get previous page with this methode."""
