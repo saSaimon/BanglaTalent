@@ -133,7 +133,7 @@ def browser_init(context, browser_name, headless):
 def before_scenario(context, scenario):
     context.logger = setup_logging()
 
-    browser_name = os.getenv('BROWSER', 'chrome')  # Default to Chrome if not specified
+    browser_name = os.getenv('BROWSER', 'firefox')  # Default to Chrome if not specified
     headless_mode = os.getenv('HEADLESS', 'false').lower() == 'true'
     browser_init(context, browser_name, headless_mode)
     starting_message = f"\nStarted scenario in {context.browser_name}:  {scenario.name}"

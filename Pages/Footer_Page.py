@@ -1,7 +1,7 @@
 import time
 from typing import Tuple
 
-import self as self
+
 from selenium.webdriver.common.by import By
 
 from Pages.Base_Page import Page
