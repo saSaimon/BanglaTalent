@@ -9,7 +9,7 @@ class LoginPage(Page):
     AcceptCookies = (By.XPATH, '//div[@class="grid grid-cols-2 gap-3 mt-10"]/button[2]')
     RejectCookies = (By.XPATH, '//div[@class="grid grid-cols-2 gap-3 mt-10"]/button[1]')
     SignInButton = (By.XPATH, '//div[@class="flex items-center md:ml-6 md:my-0 my-7 justify-center"]/a[1]')
-    NextButton = (By.XPATH, "//button[@class='inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary h-10 px-4 py-2 w-full']")
+    LookingForJobButton = (By.CSS_SELECTOR, '[href="/candidate/auth"]')
     EmailField = (By.XPATH, '//div[@class="relative w-full"]/input')
     PasswordField = (By.XPATH, '//*[@id="password"]')
     SubmitButton = (By.CSS_SELECTOR, "button[type='submit']")
@@ -19,7 +19,7 @@ class LoginPage(Page):
     KeepMeSignCheckbox = (By.CSS_SELECTOR, '[class="flex space-x-2 items-top"] button')
     PasswordValidationMessage = (By.CSS_SELECTOR, '[class="text-[12px] mt-1 select-none leading-none text-destructive"]')
     EmailValidationMessage = (By.CSS_SELECTOR, '[class="text-[12px] mt-1 select-none leading-none text-destructive"]')
-    LookingForJobButton = (By.XPATH, "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/p[1]")
+    # LookingForJobButton = (By.XPATH, "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[2]/div[1]/p[1]")
     LookingToHireButton = (By.XPATH, "/html[1]/body[1]/div[1]/main[1]/div[1]/div[2]/div[1]/div[3]/div[1]/p[1]")
     JobListing = (By.CSS_SELECTOR, '[class="text-[#183B56] text-[28px] not-italic font-semibold leading-[150%] my-4"]')
 
@@ -35,8 +35,8 @@ class LoginPage(Page):
     def click_sign_in_button(self):
         self.click(*self.SignInButton)
 
-    def click_next_button(self):
-        self.click(*self.NextButton)
+    def click_looking_for_job(self):
+        self.click(*self.LookingForJobButton)
 
     def input_email(self, text):
         self.input_text(text, *self.EmailField)

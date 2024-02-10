@@ -33,9 +33,9 @@ def click_sign_in_button(context):
     context.app.login_page.click_sign_in_button()
 
 
-@then('Click next button')
+@then('Click Looking For Job')
 def click_next_button(context):
-    context.app.login_page.click_next_button()
+    context.app.login_page.click_looking_for_job()
 
 
 @then('Enter valid email')

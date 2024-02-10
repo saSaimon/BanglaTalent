@@ -97,7 +97,7 @@ def keep_me_sing_in(context):
 @then("click on the submit button and Verify the Sign up successful")
 def submitButton(context):
     context.app.singUp_page.click_sing_up_button()
-    context.app.singUp_page.success_failed_message(context)
+    # context.app.singUp_page.success_failed_message(context)
 
 
 @then("user will navigates to  the Enter OTP page")

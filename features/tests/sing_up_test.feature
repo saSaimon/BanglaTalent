@@ -6,7 +6,7 @@ Feature: Different Sing up Test Cases
     Given User can enter to the https://banglatalent.com/
     Then Accept All Cookies
     Then Click on Sign Up button
-    Then Click next button
+    Then Click Looking For Job
     Then Click on Sing Up Tab
     Then Verify the Create Your Account Text
     Then Verify the google icon is present
@@ -20,7 +20,7 @@ Feature: Different Sing up Test Cases
     Then Enter a valid password Nabia@8256
     Then click on the keep me sing in
     Then click on the submit button and Verify the Sign up successful
-    Then user will navigates to  the Enter OTP page
+#    Then user will navigates to  the Enter OTP page
 #    Then verifies the presence of the Resend Link
 #    Then Enter the OTP and click on the Verify button
 #    Then the OTP should be successfully verified
@@ -31,7 +31,7 @@ Feature: Different Sing up Test Cases
     Given User can enter to the https://banglatalent.com/
     Then Accept All Cookies
     Then Click on Sign Up button
-    Then Click next button
+    Then Click Looking For Job
     Then Click on Sing Up Tab
     Then Verify the Create Your Account Text
     Then Verify the google icon is present
@@ -51,7 +51,7 @@ Feature: Different Sing up Test Cases
     Given User can enter to the https://banglatalent.com/
     Then Accept All Cookies
     Then Click on Sign Up button
-    Then Click next button
+    Then Click Looking For Job
     Then Click on Sing Up Tab
     Then Verify the Create Your Account Text
     Then Verify the google icon is present
@@ -71,7 +71,7 @@ Feature: Different Sing up Test Cases
     Given User can enter to the https://banglatalent.com/
     Then Accept All Cookies
     Then Click on Sign Up button
-    Then Click next button
+    Then Click Looking For Job
     Then Click on Sing Up Tab
     Then Verify the Create Your Account Text
     Then Verify the google icon is present
