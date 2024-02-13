@@ -87,6 +87,7 @@ class SingUpPage(Page):
 
     def input_password(self, text):
         self.input_text(text, *self.Password)
+        time.sleep(30)
 
     def click_keep_sing_in(self):
         self.click(*self.isRemember)
