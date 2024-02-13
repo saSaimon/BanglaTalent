@@ -73,6 +73,13 @@ def browser_init(context, browser_name, headless):
         service = FirefoxService(executable_path='/snap/bin/geckodriver')
         context.driver = webdriver.Firefox(service=service, seleniumwire_options=seleniumwire_options,
                                            options=firefox_options)
+    elif browser_name == 'chrome_linux':
+        chrome_options = ChromeOptions()
+        if headless:
+            chrome_options.add_argument("--headless")
+        service = ChromeService()
+        context.driver = webdriver.Firefox(service=service, seleniumwire_options=seleniumwire_options,
+                                           options=chrome_options)
 
     else:  # Defaults to Chrome if no match
         chrome_options = ChromeOptions()
@@ -140,7 +147,7 @@ def browser_init(context, browser_name, headless):
 def before_scenario(context, scenario):
     context.logger = setup_logging()
 
-    browser_name = os.getenv('BROWSER', 'firefox_linux')  # Default to Chrome if not specified
+    browser_name = os.getenv('BROWSER', 'chrome_linux')  # Default to Chrome if not specified
     headless_mode = os.getenv('HEADLESS', 'true').lower() == 'true'
     browser_init(context, browser_name, headless_mode)
     starting_message = f"\nStarted scenario in {context.browser_name}:  {scenario.name}"
