@@ -10,7 +10,7 @@ Feature: Different Login Test Cases
     Then Enter valid email
     Then Enter valid password
     Then Click Sign in Button to login
-#    Then Verify Sign in is Successful
+    Then Verify Sign in is Successful
 
   Scenario: User can not log in with invalid email and invalid pass
     Given User can enter to the https://banglatalent.com/

@@ -86,6 +86,7 @@ def input_invalid_email(context, email):
 @then("Enter a valid password {password}")
 def input_password(context, password):
     context.app.singUp_page.input_password(password)
+    time.sleep(30)
 
 
 @then("click on the keep me sing in")
