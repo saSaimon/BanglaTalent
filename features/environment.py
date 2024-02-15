@@ -16,7 +16,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from Logger.logging_config import setup_logging
 import logging
 from datetime import datetime
-# import allure
+import allure
 
 # behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/dashboard_test.feature
 
@@ -66,12 +66,18 @@ def browser_init(context, browser_name, headless):
         service = EdgeService(executable_path=EdgeChromiumDriverManager().install())
         context.driver = webdriver.Edge(service=service, seleniumwire_options=seleniumwire_options,
                                         options=edge_options)
-
+    elif browser_name == 'firefox_linux':
+        firefox_options = FirefoxOptions()
+        if headless:
+            firefox_options.add_argument("--headless")
+        service = FirefoxService(executable_path='/snap/bin/geckodriver')
+        context.driver = webdriver.Firefox(service=service, seleniumwire_options=seleniumwire_options,
+                                           options=firefox_options)
     else:  # Defaults to Chrome if no match
         chrome_options = ChromeOptions()
         if headless:
             chrome_options.add_argument("--headless")
-        service = ChromeService(executable_path=ChromeDriverManager().install())
+        service = ChromeService()
         context.driver = webdriver.Chrome(service=service, seleniumwire_options=seleniumwire_options,
                                           options=chrome_options)
 
@@ -132,9 +138,9 @@ def browser_init(context, browser_name, headless):
 
 def before_scenario(context, scenario):
     context.logger = setup_logging()
-
     browser_name = os.getenv('BROWSER')  # Default to Chrome if not specified
     headless_mode = os.getenv('HEADLESS', 'false').lower() == 'true'
+
     browser_init(context, browser_name, headless_mode)
     starting_message = f"\nStarted scenario in {context.browser_name}:  {scenario.name}"
     context.logger.info(starting_message)
