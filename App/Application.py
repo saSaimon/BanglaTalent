@@ -15,3 +15,4 @@ class Application:
         self.singUp_page = SingUpPage(self.driver)
         self.employer_home_page = HomePageForEmployer(self.driver)
         self.settings_and_preferences = SettingsAndPreferences(self.driver)
+

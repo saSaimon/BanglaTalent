@@ -65,7 +65,7 @@ class SettingsAndPreferences(Page):
 
     def click_on_submit_button(self):
         self.click(*self.SubmitButton)
-        time.sleep(5)
+        time.sleep(3)
 
     def verify_success_message(self, context):
         self.verify_text('Change Password Success!', *self.SuccessOrFailedMessage, context=context)

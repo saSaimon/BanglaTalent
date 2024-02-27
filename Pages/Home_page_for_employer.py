@@ -21,6 +21,7 @@ class HomePageForEmployer(Page):
     BT_logo = (By.XPATH, "//a[@href = '/employer']")
 
 
+
     def verify_post_a_job_button_present(self, context):
         self.verify_text("Post a Job", *self.PostAJobButton, context=context)
 

@@ -7,7 +7,7 @@ Scenario: User will be able to activate or deactivate Two Factor Authentication
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer nsharli8256+6@gmail.com
+    Then Enter valid email for employer nsharli8256+1@gmail.com
     Then Enter valid password for employer Sitakund1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
@@ -22,15 +22,15 @@ Scenario: User will be able to Change Password
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer employer@mail.com
-    Then Enter valid password for employer Employer@12345
+    Then Enter valid email for employer nsharli8256+1@gmail.com
+    Then Enter valid password for employer Sitakund1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
     Then Click on the setting icon
     Then Verify the present of Password and Security
     Then Click Change password button
-    Then Enter Old Password Bangladesh1#
-    Then Enter New Password Sitakund1#
+    Then Enter Old Password Sitakund1#
+    Then Enter New Password Bangladesh1#
     Then Click on Submit Button
     Then Check the successful message
     Then Close the Change Password POPUP
@@ -41,14 +41,14 @@ Scenario: User attempts to change password with an incorrect old password
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer employer@mail.com
-    Then Enter valid password for employer Employer@12345
+    Then Enter valid email for employer nsharli8256+1@gmail.com
+    Then Enter valid password for employer Bangladesh1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
     Then Click on the setting icon
     Then Verify the present of Password and Security
     Then Click Change password button
-    Then Enter Incorrect Old Password Bangladesh1#
+    Then Enter Incorrect Old Password Bangladesh1@
     Then Enter New Password Sitakund1#
     Then Click on Submit Button
     Then Check the failed message
@@ -60,8 +60,8 @@ Scenario: User attempts to change password to the same password
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer employer@mail.com
-    Then Enter valid password for employer Employer@12345
+    Then Enter valid email for employer nsharli8256+1@gmail.com
+    Then Enter valid password for employer Bangladesh1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
     Then Click on the setting icon
@@ -77,8 +77,8 @@ Scenario: User will be able to select language as Bangla
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer employer@mail.com
-    Then Enter valid password for employer Employer@12345
+    Then Enter valid email for employer nsharli8256+1@gmail.com
+    Then Enter valid password for employer Bangladesh1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
     Then Click on the setting icon
@@ -92,8 +92,8 @@ Scenario: User will be able to select language as English
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer employer@mail.com
-    Then Enter valid password for employer Employer@12345
+    Then Enter valid email for employer nsharli8256+1@gmail.com
+    Then Enter valid password for employer Bangladesh1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
     Then Click on the setting icon
@@ -108,8 +108,8 @@ Scenario: User will be able to sing out from all device
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer employer@mail.com
-    Then Enter valid password for employer Employer@12345
+    Then Enter valid email for employer nsharli8256+1@gmail.com
+    Then Enter valid password for employer Bangladesh1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
     Then Click on the setting icon
@@ -124,8 +124,8 @@ Scenario: User will be able to delete the account
     Then Accept All Cookies
     Then Click on Sign in button
     Then Click Looking For Job
-    Then Enter valid email for employer employer@mail.com
-    Then Enter valid password for employer Employer@12345
+    Then Enter valid email for employer nsharli8256+1@gmail.com
+    Then Enter valid password for employer Bangladesh1#
     Then Click Sign in Button to login
     Then Verify the present of setting icon
     Then Click on the setting icon
