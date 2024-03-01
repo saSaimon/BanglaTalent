@@ -1,0 +1,5 @@
+behave
+python-dotenv
+allure-behave
+selenium
+webdriver-manager
