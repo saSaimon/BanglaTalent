@@ -1,3 +1,5 @@
+from Pages.Applied_Job import AppliedJob
+from Pages.Edit_profile_for_candidate import EditProfileForCandidate
 from Pages.Login_Page import LoginPage
 from Pages.Landing_Page import LandingPage
 from Pages.Footer_Page import FooterPage
@@ -15,4 +17,7 @@ class Application:
         self.singUp_page = SingUpPage(self.driver)
         self.employer_home_page = HomePageForEmployer(self.driver)
         self.settings_and_preferences = SettingsAndPreferences(self.driver)
+        self.apply_job = AppliedJob(self.driver)
+        self.edit_profile_for_candidate = EditProfileForCandidate(self.driver)
+
 

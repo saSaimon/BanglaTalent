@@ -10,7 +10,9 @@ class LoginPage(Page):
     RejectCookies = (By.XPATH, '//div[@class="grid grid-cols-2 gap-3 mt-10"]/button[1]')
     # SignInButton = (By.XPATH, '//div[@class="flex items-center md:ml-6 md:my-0 my-7 justify-center"]/a[1]')
     SignInButton = (By.XPATH, "//button[normalize-space()='Sign In']")
-    LookingForJobButton = (By.CSS_SELECTOR, '[href="/candidate/auth"]')
+    # LookingForJobButton = (By.CSS_SELECTOR, '[href="/candidate/auth"]')
+    LookingForJobButton = (By.CSS_SELECTOR, '[href="/candidate/auth?type=signIn"]')
+
     EmailField = (By.XPATH, '//div[@class="relative w-full"]/input')
     PasswordField = (By.XPATH, '//*[@id="password"]')
     SubmitButton = (By.CSS_SELECTOR, "button[type='submit']")
