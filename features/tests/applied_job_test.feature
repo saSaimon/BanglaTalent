@@ -2,7 +2,7 @@
 Feature: Different test cases for Applied Job will be implemented here
    Enter feature description here
 
-Scenario: Test Apply Job feature with Bangla Telent Resume
+Scenario: Test Apply Job feature with Bangla Talent Resume
     Given User can enter to the https://dev.banglatalent.com/
     Then Accept All Cookies
     Then Click on Sign in button

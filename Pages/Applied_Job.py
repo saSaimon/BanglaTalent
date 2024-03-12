@@ -122,7 +122,7 @@ class AppliedJob(Page):
 
     def click_profile_name(self):
         self.click(*self.Profile)
-        time.sleep(20)
+        time.sleep(30)
 
 
         
