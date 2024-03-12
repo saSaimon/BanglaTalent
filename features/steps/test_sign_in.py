@@ -51,6 +51,7 @@ def enter_valid_password(context):
 @then('Click Sign in Button to login')
 def click_sign_ing_button(context):
     context.app.login_page.click_sign_in_to_login()
+    time.sleep(5)
 
 
 @then('Enter invalid email')
@@ -66,6 +67,11 @@ def enter_valid_password(context):
 @then('Verify Sign in is Successful')
 def sign_in_successful(context):
     context.app.login_page.verify_bt_logo()
+
+
+@then('Verify Sign in is Successful for employer')
+def sing_in_successful_for_employer(context):
+    context.app.login_page.verify_bt_logo_for_employer()
 
 
 @then('Verify Login Failed')
@@ -88,22 +94,33 @@ def check_email_validation(context):
     context.app.login_page.check_password_validation(context)
 
 
-@then('Enter valid email for employer')
-def enter_valid_email(context):
-    context.app.login_page.input_email('nogoxis359@oprevolt.com')
+@then('Enter valid email for employer {email}')
+def enter_valid_email(context, email):
+    context.app.login_page.input_email(email)
 
 
-@then('Enter valid password for employer')
-def enter_valid_password(context):
-    context.app.login_page.input_password('Salam-0987')
+@then('Enter valid password for employer {password}')
+def enter_valid_password(context, password):
+    context.app.login_page.input_password(password)
+    time.sleep(45)
 
 
 @then('Click on Looking to hire')
 def click_looking_to_hire(context):
-    time.sleep(5)
     context.app.login_page.click_hire()
 
 
-@then('Verify Job Listing element is present')
-def job_listing_present(context):
-    context.app.login_page.verify_job_listing_present(context)
+@then('Enter invalid email for employer {email}')
+def enter_valid_email(context, email):
+    context.app.login_page.input_email(email)
+
+
+@then('Enter invalid password for employer {password}')
+def enter_valid_password(context, password):
+    context.app.login_page.input_password(password)
+    time.sleep(20)
+
+
+
+
+

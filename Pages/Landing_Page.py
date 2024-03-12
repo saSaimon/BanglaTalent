@@ -186,6 +186,7 @@ class LandingPage(Page):
     def click_apply_job_button(self):
         time.sleep(1)
         self.click(*self.ApplyJobButton)
+        time.sleep(2)
 
     def click_yes_button(self):
         time.sleep(1)
